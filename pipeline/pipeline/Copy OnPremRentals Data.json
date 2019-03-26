@@ -1,0 +1,223 @@
+{
+	"name": "Copy OnPremRentals Data",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy Actors",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"sink": {
+						"type": "AzureBlobFSSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Transactions",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "southridge_7_adls",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "actors.csv",
+							"filepath": "vanarsdelltd/onpremrentals"
+						}
+					}
+				]
+			},
+			{
+				"name": "Copy Customers",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"sink": {
+						"type": "AzureBlobFSSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Transactions",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "southridge_7_adls",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "customers.csv",
+							"filepath": "vanarsdelltd/onpremrentals"
+						}
+					}
+				]
+			},
+			{
+				"name": "Copy MovieActors",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"sink": {
+						"type": "AzureBlobFSSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Transactions",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "southridge_7_adls",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "movieactors.csv",
+							"filepath": "vanarsdelltd/onpremrentals"
+						}
+					}
+				]
+			},
+			{
+				"name": "Copy Movies",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"sink": {
+						"type": "AzureBlobFSSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Transactions",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "southridge_7_adls",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "movies.csv",
+							"filepath": "vanarsdelltd/onpremrentals"
+						}
+					}
+				]
+			},
+			{
+				"name": "Copy OnlineMovieMappings",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"sink": {
+						"type": "AzureBlobFSSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Transactions",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "southridge_7_adls",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "onlinemoviemappings.csv",
+							"filepath": "vanarsdelltd/onpremrentals"
+						}
+					}
+				]
+			},
+			{
+				"name": "Copy Transactions",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"sink": {
+						"type": "AzureBlobFSSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Transactions",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "southridge_7_adls",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "transactions.csv",
+							"filepath": "vanarsdelltd/onpremrentals"
+						}
+					}
+				]
+			}
+		]
+	}
+}
