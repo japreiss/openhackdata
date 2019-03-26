@@ -2,6 +2,32 @@
 	"name": "southridge-catalog-movies",
 	"properties": {
 		"description": "Movies",
+		"activities": [
+			{
+				"name": "Cosmos Connection",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "DocumentDbCollectionSource",
+						"nestingSeparator": "."
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "CosmosSqlApi",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
 		"folder": {
 			"name": "Catalog"
 		}
