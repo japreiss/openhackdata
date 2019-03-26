@@ -63,6 +63,18 @@
 			"type": "string",
 			"defaultValue": "https://southridge7.dfs.core.windows.net"
 		},
+		"trigger_addresses_properties_southridge-cloudsales_parameters_filepath": {
+			"type": "string",
+			"defaultValue": "cloudsales"
+		},
+		"trigger_addresses_properties_southridge-cloudsales_parameters_filename": {
+			"type": "string",
+			"defaultValue": "addresses.csv"
+		},
+		"trigger_addresses_properties_southridge-cloudsales_parameters_table": {
+			"type": "string",
+			"defaultValue": "[concat('[', 'dbo].[Addresses]')]"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -131,6 +143,15 @@
 					},
 					"southridge_7_adls_properties_typeProperties_folderPath": {
 						"value": "[parameters('southridge_7_adls_properties_typeProperties_folderPath')]"
+					},
+					"trigger_addresses_properties_southridge-cloudsales_parameters_filepath": {
+						"value": "[parameters('trigger_addresses_properties_southridge-cloudsales_parameters_filepath')]"
+					},
+					"trigger_addresses_properties_southridge-cloudsales_parameters_filename": {
+						"value": "[parameters('trigger_addresses_properties_southridge-cloudsales_parameters_filename')]"
+					},
+					"trigger_addresses_properties_southridge-cloudsales_parameters_table": {
+						"value": "[parameters('trigger_addresses_properties_southridge-cloudsales_parameters_table')]"
 					}
 				}
 			},

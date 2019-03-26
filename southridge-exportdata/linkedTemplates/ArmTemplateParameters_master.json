@@ -47,6 +47,15 @@
 		"southridge_7_dls_catalog_properties_typeProperties_url": {
 			"value": "https://southridge7.dfs.core.windows.net"
 		},
+		"trigger_addresses_properties_southridge-cloudsales_parameters_filepath": {
+			"value": "cloudsales"
+		},
+		"trigger_addresses_properties_southridge-cloudsales_parameters_filename": {
+			"value": "addresses.csv"
+		},
+		"trigger_addresses_properties_southridge-cloudsales_parameters_table": {
+			"value": "[concat('[', 'dbo].[Addresses]')]"
+		},
 		"containerUri": {
 			"value": ""
 		},
