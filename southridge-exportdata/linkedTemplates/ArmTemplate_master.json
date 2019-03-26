@@ -51,54 +51,6 @@
 			"type": "string",
 			"defaultValue": "@dataset().filepath"
 		},
-		"southridge_7_adls1_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "@dataset().filename"
-		},
-		"southridge_7_adls1_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "@dataset().filepath"
-		},
-		"southridge_7_adls2_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "@dataset().filename"
-		},
-		"southridge_7_adls2_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "@dataset().filepath"
-		},
-		"southridge_7_adls3_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "@dataset().filename"
-		},
-		"southridge_7_adls3_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "@dataset().filepath"
-		},
-		"southridge_7_adls_streaming_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "@dataset().filename"
-		},
-		"southridge_7_adls_streaming_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "@dataset().filepath"
-		},
-		"southridge_7_adls_streaming_customers_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "@dataset().filename"
-		},
-		"southridge_7_adls_streaming_customers_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "@dataset().filepath"
-		},
-		"southridge_7_adls_streaming_transactions_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "@dataset().filename"
-		},
-		"southridge_7_adls_streaming_transactions_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "@dataset().filepath"
-		},
 		"catalog_movies_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://southridge7.dfs.core.windows.net"
@@ -179,66 +131,10 @@
 					},
 					"southridge_7_adls_properties_typeProperties_folderPath": {
 						"value": "[parameters('southridge_7_adls_properties_typeProperties_folderPath')]"
-					},
-					"southridge_7_adls1_properties_typeProperties_fileName": {
-						"value": "[parameters('southridge_7_adls1_properties_typeProperties_fileName')]"
-					},
-					"southridge_7_adls1_properties_typeProperties_folderPath": {
-						"value": "[parameters('southridge_7_adls1_properties_typeProperties_folderPath')]"
-					},
-					"southridge_7_adls2_properties_typeProperties_fileName": {
-						"value": "[parameters('southridge_7_adls2_properties_typeProperties_fileName')]"
-					},
-					"southridge_7_adls2_properties_typeProperties_folderPath": {
-						"value": "[parameters('southridge_7_adls2_properties_typeProperties_folderPath')]"
-					},
-					"southridge_7_adls3_properties_typeProperties_fileName": {
-						"value": "[parameters('southridge_7_adls3_properties_typeProperties_fileName')]"
-					},
-					"southridge_7_adls3_properties_typeProperties_folderPath": {
-						"value": "[parameters('southridge_7_adls3_properties_typeProperties_folderPath')]"
 					}
 				}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "ArmTemplate_1",
-			"type": "Microsoft.Resources/deployments",
-			"apiVersion": "2018-02-01",
-			"properties": {
-				"mode": "incremental",
-				"templateLink": {
-					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
-					"contentVersion": "1.0.0.0"
-				},
-				"parameters": {
-					"factoryName": {
-						"value": "[parameters('factoryName')]"
-					},
-					"southridge_7_adls_streaming_properties_typeProperties_fileName": {
-						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_fileName')]"
-					},
-					"southridge_7_adls_streaming_properties_typeProperties_folderPath": {
-						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_folderPath')]"
-					},
-					"southridge_7_adls_streaming_customers_properties_typeProperties_fileName": {
-						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_fileName')]"
-					},
-					"southridge_7_adls_streaming_customers_properties_typeProperties_folderPath": {
-						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_folderPath')]"
-					},
-					"southridge_7_adls_streaming_transactions_properties_typeProperties_fileName": {
-						"value": "[parameters('southridge_7_adls_streaming_transactions_properties_typeProperties_fileName')]"
-					},
-					"southridge_7_adls_streaming_transactions_properties_typeProperties_folderPath": {
-						"value": "[parameters('southridge_7_adls_streaming_transactions_properties_typeProperties_folderPath')]"
-					}
-				}
-			},
-			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_0')]"
-			]
 		}
 	]
 }
