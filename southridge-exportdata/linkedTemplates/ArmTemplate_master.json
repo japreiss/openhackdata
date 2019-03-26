@@ -67,6 +67,14 @@
 			"type": "string",
 			"defaultValue": "@dataset().filepath"
 		},
+		"southridge_7_adls3_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "@dataset().filename"
+		},
+		"southridge_7_adls3_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "@dataset().filepath"
+		},
 		"southridge_7_adls_streaming_properties_typeProperties_fileName": {
 			"type": "string",
 			"defaultValue": "@dataset().filename"
@@ -184,17 +192,11 @@
 					"southridge_7_adls2_properties_typeProperties_folderPath": {
 						"value": "[parameters('southridge_7_adls2_properties_typeProperties_folderPath')]"
 					},
-					"southridge_7_adls_streaming_properties_typeProperties_fileName": {
-						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_fileName')]"
+					"southridge_7_adls3_properties_typeProperties_fileName": {
+						"value": "[parameters('southridge_7_adls3_properties_typeProperties_fileName')]"
 					},
-					"southridge_7_adls_streaming_properties_typeProperties_folderPath": {
-						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_folderPath')]"
-					},
-					"southridge_7_adls_streaming_customers_properties_typeProperties_fileName": {
-						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_fileName')]"
-					},
-					"southridge_7_adls_streaming_customers_properties_typeProperties_folderPath": {
-						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_folderPath')]"
+					"southridge_7_adls3_properties_typeProperties_folderPath": {
+						"value": "[parameters('southridge_7_adls3_properties_typeProperties_folderPath')]"
 					}
 				}
 			},
@@ -213,6 +215,18 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"southridge_7_adls_streaming_properties_typeProperties_fileName": {
+						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_fileName')]"
+					},
+					"southridge_7_adls_streaming_properties_typeProperties_folderPath": {
+						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_folderPath')]"
+					},
+					"southridge_7_adls_streaming_customers_properties_typeProperties_fileName": {
+						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_fileName')]"
+					},
+					"southridge_7_adls_streaming_customers_properties_typeProperties_folderPath": {
+						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_folderPath')]"
 					},
 					"southridge_7_adls_streaming_transactions_properties_typeProperties_fileName": {
 						"value": "[parameters('southridge_7_adls_streaming_transactions_properties_typeProperties_fileName')]"

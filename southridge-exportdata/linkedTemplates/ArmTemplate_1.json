@@ -7,6 +7,22 @@
 			"metadata": "Data Factory Name",
 			"defaultValue": "southridge-exportdata"
 		},
+		"southridge_7_adls_streaming_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "@dataset().filename"
+		},
+		"southridge_7_adls_streaming_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "@dataset().filepath"
+		},
+		"southridge_7_adls_streaming_customers_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "@dataset().filename"
+		},
+		"southridge_7_adls_streaming_customers_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "@dataset().filepath"
+		},
 		"southridge_7_adls_streaming_transactions_properties_typeProperties_fileName": {
 			"type": "string",
 			"defaultValue": "@dataset().filename"
@@ -20,6 +36,88 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/southridge_7_adls_streaming')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "southridge_7_adls",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"filename": {
+						"type": "String"
+					},
+					"filepath": {
+						"type": "String"
+					}
+				},
+				"annotations": [],
+				"type": "AzureBlobFSFile",
+				"typeProperties": {
+					"format": {
+						"type": "TextFormat",
+						"columnDelimiter": ",",
+						"rowDelimiter": "",
+						"nullValue": "\\N",
+						"treatEmptyAsNull": true,
+						"skipLineCount": 0,
+						"firstRowAsHeader": false
+					},
+					"fileName": {
+						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_fileName')]",
+						"type": "Expression"
+					},
+					"folderPath": {
+						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_folderPath')]",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/southridge_7_adls_streaming_customers')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "southridge_7_adls",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"filename": {
+						"type": "String"
+					},
+					"filepath": {
+						"type": "String"
+					}
+				},
+				"annotations": [],
+				"type": "AzureBlobFSFile",
+				"typeProperties": {
+					"format": {
+						"type": "TextFormat",
+						"columnDelimiter": ",",
+						"rowDelimiter": "",
+						"nullValue": "\\N",
+						"treatEmptyAsNull": true,
+						"skipLineCount": 0,
+						"firstRowAsHeader": false
+					},
+					"fileName": {
+						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_fileName')]",
+						"type": "Expression"
+					},
+					"folderPath": {
+						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_folderPath')]",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/southridge_7_adls_streaming_transactions')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
@@ -147,7 +245,7 @@
 				"parameters": {
 					"filename": {
 						"type": "String",
-						"defaultValue": "movies.csv"
+						"defaultValue": "movies.json"
 					},
 					"filepath": {
 						"type": "String",
@@ -455,6 +553,85 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/southridge-cloudsales')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "southridge-cloudsales",
+				"activities": [
+					{
+						"name": "CloudSales",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SqlSource"
+							},
+							"sink": {
+								"type": "AzureBlobFSSink"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "CloudSales",
+								"type": "DatasetReference",
+								"parameters": {
+									"table": {
+										"value": "@pipeline().parameters.table",
+										"type": "Expression"
+									}
+								}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "southridge_7_adls",
+								"type": "DatasetReference",
+								"parameters": {
+									"filename": {
+										"value": "@pipeline().parameters.filename",
+										"type": "Expression"
+									},
+									"filepath": {
+										"value": "@pipeline().parameters.filepath",
+										"type": "Expression"
+									}
+								}
+							}
+						]
+					}
+				],
+				"parameters": {
+					"filepath": {
+						"type": "String",
+						"defaultValue": "cloudsales"
+					},
+					"filename": {
+						"type": "String",
+						"defaultValue": "addresses.csv"
+					},
+					"table": {
+						"type": "String",
+						"defaultValue": "[concat('[', 'dbo].[Addresses]')]"
+					}
+				},
+				"folder": {
+					"name": "CloudSales"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/southridge-cloudstreaming-addresses')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -522,7 +699,9 @@
 				},
 				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/southridge_7_adls_streaming')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/southridge-cloudstreaming-customers')]",
@@ -592,7 +771,9 @@
 				},
 				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/southridge_7_adls_streaming_customers')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/southridge-cloudstreaming-transactions')]",

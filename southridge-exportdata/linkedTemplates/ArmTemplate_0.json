@@ -79,19 +79,11 @@
 			"type": "string",
 			"defaultValue": "@dataset().filepath"
 		},
-		"southridge_7_adls_streaming_properties_typeProperties_fileName": {
+		"southridge_7_adls3_properties_typeProperties_fileName": {
 			"type": "string",
 			"defaultValue": "@dataset().filename"
 		},
-		"southridge_7_adls_streaming_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "@dataset().filepath"
-		},
-		"southridge_7_adls_streaming_customers_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "@dataset().filename"
-		},
-		"southridge_7_adls_streaming_customers_properties_typeProperties_folderPath": {
+		"southridge_7_adls3_properties_typeProperties_folderPath": {
 			"type": "string",
 			"defaultValue": "@dataset().filepath"
 		}
@@ -263,6 +255,25 @@
 						"value": "@dataset().table",
 						"type": "Expression"
 					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/CloudSales')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CloudSales1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "CloudSales",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"typeProperties": {
+					"tableName": "[concat('[', 'dbo].[Addresses]')]"
 				}
 			},
 			"dependsOn": [
@@ -521,7 +532,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/southridge_7_adls_streaming')]",
+			"name": "[concat(parameters('factoryName'), '/southridge_7_adls3')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -550,54 +561,11 @@
 						"firstRowAsHeader": false
 					},
 					"fileName": {
-						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_fileName')]",
+						"value": "[parameters('southridge_7_adls3_properties_typeProperties_fileName')]",
 						"type": "Expression"
 					},
 					"folderPath": {
-						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_folderPath')]",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/southridge_7_adls')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/southridge_7_adls_streaming_customers')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "southridge_7_adls",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"filename": {
-						"type": "String"
-					},
-					"filepath": {
-						"type": "String"
-					}
-				},
-				"annotations": [],
-				"type": "AzureBlobFSFile",
-				"typeProperties": {
-					"format": {
-						"type": "TextFormat",
-						"columnDelimiter": ",",
-						"rowDelimiter": "",
-						"nullValue": "\\N",
-						"treatEmptyAsNull": true,
-						"skipLineCount": 0,
-						"firstRowAsHeader": false
-					},
-					"fileName": {
-						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_fileName')]",
-						"type": "Expression"
-					},
-					"folderPath": {
-						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_folderPath')]",
+						"value": "[parameters('southridge_7_adls3_properties_typeProperties_folderPath')]",
 						"type": "Expression"
 					}
 				}

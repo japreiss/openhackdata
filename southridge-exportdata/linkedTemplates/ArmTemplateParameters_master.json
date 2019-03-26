@@ -50,6 +50,12 @@
 		"southridge_7_adls2_properties_typeProperties_folderPath": {
 			"value": "@dataset().filepath"
 		},
+		"southridge_7_adls3_properties_typeProperties_fileName": {
+			"value": "@dataset().filename"
+		},
+		"southridge_7_adls3_properties_typeProperties_folderPath": {
+			"value": "@dataset().filepath"
+		},
 		"southridge_7_adls_streaming_properties_typeProperties_fileName": {
 			"value": "@dataset().filename"
 		},
