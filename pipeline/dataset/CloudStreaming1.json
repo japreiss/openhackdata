@@ -1,0 +1,13 @@
+{
+	"name": "CloudStreaming1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CloudStreaming",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": "[dbo].[Addresses]"
+		}
+	}
+}
