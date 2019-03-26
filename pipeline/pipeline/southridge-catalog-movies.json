@@ -18,11 +18,20 @@
 						"type": "DocumentDbCollectionSource",
 						"nestingSeparator": "."
 					},
+					"sink": {
+						"type": "AzureBlobFSSink"
+					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "CosmosSqlApi",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Catalog_movies",
 						"type": "DatasetReference"
 					}
 				]

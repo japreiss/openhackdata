@@ -1,0 +1,21 @@
+{
+	"name": "Catalog_movies",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "southridge_7_dls_catalog",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlobFSFile",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "\\N",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": false
+			}
+		}
+	}
+}
