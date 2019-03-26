@@ -1,0 +1,6 @@
+{
+	"name": "VanArsdelLtdSqlServerLocal",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
