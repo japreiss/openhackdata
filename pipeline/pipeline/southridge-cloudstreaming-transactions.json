@@ -4,7 +4,7 @@
 		"description": "southridge-cloudstreaming-transactions",
 		"activities": [
 			{
-				"name": "Addresses",
+				"name": "Transactions",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -24,13 +24,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudStreaming1",
+						"referenceName": "CloudStreaming_Transactions",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "southridge_7_adls_streaming1",
+						"referenceName": "southridge_7_adls_streaming_transactions",
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": {
