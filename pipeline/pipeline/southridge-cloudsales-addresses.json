@@ -24,7 +24,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudSales",
+						"referenceName": "AzureSQLDatabase",
 						"type": "DatasetReference",
 						"parameters": {
 							"table": {
