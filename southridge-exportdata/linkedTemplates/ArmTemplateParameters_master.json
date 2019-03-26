@@ -17,7 +17,13 @@
 		"CosmosCatalogDbConnection_connectionString": {
 			"value": ""
 		},
+		"VanArsdelLtdOnPrem_connectionString": {
+			"value": ""
+		},
 		"catalog_movies_accountKey": {
+			"value": ""
+		},
+		"linkedService1_password": {
 			"value": ""
 		},
 		"southridge_7_adls_accountKey": {
@@ -40,6 +46,9 @@
 		},
 		"catalog_movies_properties_typeProperties_url": {
 			"value": "https://southridge7.dfs.core.windows.net"
+		},
+		"linkedService1_properties_typeProperties_userId": {
+			"value": "openhackadmin"
 		},
 		"southridge_7_adls_properties_typeProperties_url": {
 			"value": "https://southridge7.dfs.core.windows.net"

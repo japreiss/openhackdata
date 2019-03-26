@@ -23,9 +23,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'CosmosCatalogDbConnection'"
 		},
+		"VanArsdelLtdOnPrem_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'VanArsdelLtdOnPrem'"
+		},
 		"catalog_movies_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'catalog_movies'"
+		},
+		"linkedService1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'linkedService1'"
 		},
 		"southridge_7_adls_accountKey": {
 			"type": "secureString",
@@ -54,6 +62,10 @@
 		"catalog_movies_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://southridge7.dfs.core.windows.net"
+		},
+		"linkedService1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "openhackadmin"
 		},
 		"southridge_7_adls_properties_typeProperties_url": {
 			"type": "string",
@@ -111,6 +123,12 @@
 					"southridge_7_dls_catalog_accountKey": {
 						"value": "[parameters('southridge_7_dls_catalog_accountKey')]"
 					},
+					"VanArsdelLtdOnPrem_connectionString": {
+						"value": "[parameters('VanArsdelLtdOnPrem_connectionString')]"
+					},
+					"linkedService1_password": {
+						"value": "[parameters('linkedService1_password')]"
+					},
 					"catalog_movies_properties_typeProperties_url": {
 						"value": "[parameters('catalog_movies_properties_typeProperties_url')]"
 					},
@@ -131,10 +149,33 @@
 					},
 					"southridge_7_adls_properties_typeProperties_folderPath": {
 						"value": "[parameters('southridge_7_adls_properties_typeProperties_folderPath')]"
+					},
+					"linkedService1_properties_typeProperties_userId": {
+						"value": "[parameters('linkedService1_properties_typeProperties_userId')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_0')]"
+			]
 		}
 	]
 }

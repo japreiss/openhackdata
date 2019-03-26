@@ -21,7 +21,6 @@
 					"referenceName": "linkedService1",
 					"type": "LinkedServiceReference"
 				},
-				"annotations": [],
 				"type": "FileShare",
 				"typeProperties": {
 					"format": {
@@ -34,8 +33,7 @@
 						"firstRowAsHeader": false
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		}
 	]
 }
