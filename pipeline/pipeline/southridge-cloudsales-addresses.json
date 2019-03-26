@@ -1,10 +1,10 @@
 {
-	"name": "southridge-pipeline",
+	"name": "southridge-cloudsales-addresses",
 	"properties": {
-		"description": "southridge-pipeline",
+		"description": "southridge-cloudsales-addresses",
 		"activities": [
 			{
-				"name": "CloudSales",
+				"name": "Addresses",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
