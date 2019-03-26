@@ -1,5 +1,5 @@
 {
-	"name": "FourthCoffeeFileShare1",
+	"name": "FourthCoffeeFileShareActors",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "linkedService1",
@@ -15,7 +15,9 @@
 				"treatEmptyAsNull": true,
 				"skipLineCount": 0,
 				"firstRowAsHeader": false
-			}
+			},
+			"fileName": "Actors.csv",
+			"folderPath": ""
 		}
 	}
 }
