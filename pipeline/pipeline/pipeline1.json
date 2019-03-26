@@ -23,7 +23,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Actors",
+						"referenceName": "Customers",
 						"type": "DatasetReference"
 					}
 				],
@@ -33,6 +33,42 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "actors.csv",
+							"filepath": "vanarsdelltd/onpremrentals"
+						}
+					}
+				]
+			},
+			{
+				"name": "Copy Data1",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"sink": {
+						"type": "AzureBlobFSSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Customers",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "southridge_7_adls",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "customers.csv",
 							"filepath": "vanarsdelltd/onpremrentals"
 						}
 					}
