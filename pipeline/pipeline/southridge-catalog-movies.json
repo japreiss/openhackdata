@@ -54,7 +54,7 @@
 		"parameters": {
 			"filename": {
 				"type": "String",
-				"defaultValue": "movies.csv"
+				"defaultValue": "movies.json"
 			},
 			"filepath": {
 				"type": "String",
