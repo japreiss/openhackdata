@@ -24,13 +24,19 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudSales_addresses",
-						"type": "DatasetReference"
+						"referenceName": "CloudSales",
+						"type": "DatasetReference",
+						"parameters": {
+							"table": {
+								"value": "@pipeline().parameters.table",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "southridge_7_adls",
+						"referenceName": "southridge_7_adls_cloudsales_addresses",
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": {
@@ -54,6 +60,10 @@
 			"filename": {
 				"type": "String",
 				"defaultValue": "addresses.csv"
+			},
+			"table": {
+				"type": "String",
+				"defaultValue": "[dbo].[Addresses]"
 			}
 		},
 		"folder": {
