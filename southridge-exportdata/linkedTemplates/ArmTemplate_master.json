@@ -15,9 +15,33 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'CloudSales'"
 		},
+		"CloudStreaming_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CloudStreaming'"
+		},
+		"CosmosCatalogDbConnection_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosCatalogDbConnection'"
+		},
+		"catalog_movies_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'catalog_movies'"
+		},
 		"southridge_7_adls_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'southridge_7_adls'"
+		},
+		"southridge_7_dls_catalog_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'southridge_7_dls_catalog'"
+		},
+		"Catalog_movies_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "@dataset().filename"
+		},
+		"Catalog_movies_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "@dataset().filepath"
 		},
 		"southridge_7_adls_properties_typeProperties_fileName": {
 			"type": "string",
@@ -35,10 +59,6 @@
 			"type": "string",
 			"defaultValue": "@dataset().filepath"
 		},
-		"southridge_7_adls_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://southridge7.dfs.core.windows.net"
-		},
 		"southridge_7_adls2_properties_typeProperties_fileName": {
 			"type": "string",
 			"defaultValue": "@dataset().filename"
@@ -46,6 +66,42 @@
 		"southridge_7_adls2_properties_typeProperties_folderPath": {
 			"type": "string",
 			"defaultValue": "@dataset().filepath"
+		},
+		"southridge_7_adls_streaming_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "@dataset().filename"
+		},
+		"southridge_7_adls_streaming_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "@dataset().filepath"
+		},
+		"southridge_7_adls_streaming_customers_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "@dataset().filename"
+		},
+		"southridge_7_adls_streaming_customers_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "@dataset().filepath"
+		},
+		"southridge_7_adls_streaming_transactions_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "@dataset().filename"
+		},
+		"southridge_7_adls_streaming_transactions_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "@dataset().filepath"
+		},
+		"catalog_movies_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://southridge7.dfs.core.windows.net"
+		},
+		"southridge_7_adls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://southridge7.dfs.core.windows.net"
+		},
+		"southridge_7_dls_catalog_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://southridge7.dfs.core.windows.net"
 		},
 		"containerUri": {
 			"type": "string",
@@ -80,11 +136,35 @@
 					"CloudSales_connectionString": {
 						"value": "[parameters('CloudSales_connectionString')]"
 					},
+					"CloudStreaming_connectionString": {
+						"value": "[parameters('CloudStreaming_connectionString')]"
+					},
+					"CosmosCatalogDbConnection_connectionString": {
+						"value": "[parameters('CosmosCatalogDbConnection_connectionString')]"
+					},
+					"catalog_movies_accountKey": {
+						"value": "[parameters('catalog_movies_accountKey')]"
+					},
 					"southridge_7_adls_accountKey": {
 						"value": "[parameters('southridge_7_adls_accountKey')]"
 					},
+					"southridge_7_dls_catalog_accountKey": {
+						"value": "[parameters('southridge_7_dls_catalog_accountKey')]"
+					},
+					"catalog_movies_properties_typeProperties_url": {
+						"value": "[parameters('catalog_movies_properties_typeProperties_url')]"
+					},
 					"southridge_7_adls_properties_typeProperties_url": {
 						"value": "[parameters('southridge_7_adls_properties_typeProperties_url')]"
+					},
+					"southridge_7_dls_catalog_properties_typeProperties_url": {
+						"value": "[parameters('southridge_7_dls_catalog_properties_typeProperties_url')]"
+					},
+					"Catalog_movies_properties_typeProperties_fileName": {
+						"value": "[parameters('Catalog_movies_properties_typeProperties_fileName')]"
+					},
+					"Catalog_movies_properties_typeProperties_folderPath": {
+						"value": "[parameters('Catalog_movies_properties_typeProperties_folderPath')]"
 					},
 					"southridge_7_adls_properties_typeProperties_fileName": {
 						"value": "[parameters('southridge_7_adls_properties_typeProperties_fileName')]"
@@ -103,10 +183,48 @@
 					},
 					"southridge_7_adls2_properties_typeProperties_folderPath": {
 						"value": "[parameters('southridge_7_adls2_properties_typeProperties_folderPath')]"
+					},
+					"southridge_7_adls_streaming_properties_typeProperties_fileName": {
+						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_fileName')]"
+					},
+					"southridge_7_adls_streaming_properties_typeProperties_folderPath": {
+						"value": "[parameters('southridge_7_adls_streaming_properties_typeProperties_folderPath')]"
+					},
+					"southridge_7_adls_streaming_customers_properties_typeProperties_fileName": {
+						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_fileName')]"
+					},
+					"southridge_7_adls_streaming_customers_properties_typeProperties_folderPath": {
+						"value": "[parameters('southridge_7_adls_streaming_customers_properties_typeProperties_folderPath')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"southridge_7_adls_streaming_transactions_properties_typeProperties_fileName": {
+						"value": "[parameters('southridge_7_adls_streaming_transactions_properties_typeProperties_fileName')]"
+					},
+					"southridge_7_adls_streaming_transactions_properties_typeProperties_folderPath": {
+						"value": "[parameters('southridge_7_adls_streaming_transactions_properties_typeProperties_folderPath')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_0')]"
+			]
 		}
 	]
 }

@@ -11,8 +11,26 @@
 		"CloudSales_connectionString": {
 			"value": ""
 		},
+		"CloudStreaming_connectionString": {
+			"value": ""
+		},
+		"CosmosCatalogDbConnection_connectionString": {
+			"value": ""
+		},
+		"catalog_movies_accountKey": {
+			"value": ""
+		},
 		"southridge_7_adls_accountKey": {
 			"value": ""
+		},
+		"southridge_7_dls_catalog_accountKey": {
+			"value": ""
+		},
+		"Catalog_movies_properties_typeProperties_fileName": {
+			"value": "@dataset().filename"
+		},
+		"Catalog_movies_properties_typeProperties_folderPath": {
+			"value": "@dataset().filepath"
 		},
 		"southridge_7_adls_properties_typeProperties_fileName": {
 			"value": "@dataset().filename"
@@ -26,14 +44,38 @@
 		"southridge_7_adls1_properties_typeProperties_folderPath": {
 			"value": "@dataset().filepath"
 		},
-		"southridge_7_adls_properties_typeProperties_url": {
-			"value": "https://southridge7.dfs.core.windows.net"
-		},
 		"southridge_7_adls2_properties_typeProperties_fileName": {
 			"value": "@dataset().filename"
 		},
 		"southridge_7_adls2_properties_typeProperties_folderPath": {
 			"value": "@dataset().filepath"
+		},
+		"southridge_7_adls_streaming_properties_typeProperties_fileName": {
+			"value": "@dataset().filename"
+		},
+		"southridge_7_adls_streaming_properties_typeProperties_folderPath": {
+			"value": "@dataset().filepath"
+		},
+		"southridge_7_adls_streaming_customers_properties_typeProperties_fileName": {
+			"value": "@dataset().filename"
+		},
+		"southridge_7_adls_streaming_customers_properties_typeProperties_folderPath": {
+			"value": "@dataset().filepath"
+		},
+		"southridge_7_adls_streaming_transactions_properties_typeProperties_fileName": {
+			"value": "@dataset().filename"
+		},
+		"southridge_7_adls_streaming_transactions_properties_typeProperties_folderPath": {
+			"value": "@dataset().filepath"
+		},
+		"catalog_movies_properties_typeProperties_url": {
+			"value": "https://southridge7.dfs.core.windows.net"
+		},
+		"southridge_7_adls_properties_typeProperties_url": {
+			"value": "https://southridge7.dfs.core.windows.net"
+		},
+		"southridge_7_dls_catalog_properties_typeProperties_url": {
+			"value": "https://southridge7.dfs.core.windows.net"
 		},
 		"containerUri": {
 			"value": ""
