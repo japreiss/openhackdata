@@ -55,6 +55,9 @@
 				"type": "String",
 				"defaultValue": "addresses.csv"
 			}
+		},
+		"folder": {
+			"name": "CloudSales"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
