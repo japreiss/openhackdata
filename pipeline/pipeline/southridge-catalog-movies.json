@@ -36,11 +36,7 @@
 				"outputs": [
 					{
 						"referenceName": "Catalog_movies",
-						"type": "DatasetReference",
-						"parameters": {
-							"filename": "movies",
-							"filepath": "catalog"
-						}
+						"type": "DatasetReference"
 					}
 				]
 			}
