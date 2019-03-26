@@ -1,5 +1,5 @@
 {
-	"name": "southridge_7_adls_cloudsales_addresses",
+	"name": "southridge_7_adls",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "southridge_7_adls",
