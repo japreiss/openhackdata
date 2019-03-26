@@ -30,7 +30,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "southridge_7_adls_streaming1",
+						"referenceName": "southridge_7_adls_streaming_customers",
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": {
