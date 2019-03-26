@@ -1,5 +1,5 @@
 {
-	"name": "MovieActors",
+	"name": "Movies",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "VanArsdelLtdOnPrem",
