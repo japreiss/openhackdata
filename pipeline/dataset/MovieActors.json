@@ -7,7 +7,7 @@
 		},
 		"type": "SqlServerTable",
 		"typeProperties": {
-			"tableName": "[dbo].[MovieActors]"
+			"tableName": "[dbo].[Movies]"
 		}
 	}
 }
