@@ -10,7 +10,7 @@
 				},
 				"parameters": {
 					"filepath": "cloudsales",
-					"filename": "addresses",
+					"filename": "addresses.csv",
 					"table": "[dbo].[Addresses]",
 					"database": "CloudSales"
 				}
