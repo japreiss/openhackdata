@@ -1,10 +1,10 @@
 {
-	"name": "southridge-cloudstreaming-customers",
+	"name": "southridge-cloudstreaming",
 	"properties": {
-		"description": "southridge-cloudstreaming-customers",
+		"description": "southridge-cloudstreaming",
 		"activities": [
 			{
-				"name": "Customers",
+				"name": "CloudStreaming",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -24,13 +24,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudStreaming_Customers",
+						"referenceName": "CloudStreaming",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "southridge_7_adls_streaming_customers",
+						"referenceName": "southridge_7_adls",
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": {
@@ -54,6 +54,10 @@
 			"filename": {
 				"type": "String",
 				"defaultValue": "customers.csv"
+			},
+			"table": {
+				"type": "String",
+				"defaultValue": "[dbo].[Customers]"
 			}
 		},
 		"folder": {
