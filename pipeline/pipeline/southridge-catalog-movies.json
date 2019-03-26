@@ -1,0 +1,9 @@
+{
+	"name": "southridge-catalog-movies",
+	"properties": {
+		"description": "Movies",
+		"folder": {
+			"name": "Catalog"
+		}
+	}
+}
