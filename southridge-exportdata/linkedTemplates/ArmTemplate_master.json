@@ -39,6 +39,14 @@
 			"type": "string",
 			"defaultValue": "https://southridge7.dfs.core.windows.net"
 		},
+		"southridge_7_adls2_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "@dataset().filename"
+		},
+		"southridge_7_adls2_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "@dataset().filepath"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -89,6 +97,12 @@
 					},
 					"southridge_7_adls1_properties_typeProperties_folderPath": {
 						"value": "[parameters('southridge_7_adls1_properties_typeProperties_folderPath')]"
+					},
+					"southridge_7_adls2_properties_typeProperties_fileName": {
+						"value": "[parameters('southridge_7_adls2_properties_typeProperties_fileName')]"
+					},
+					"southridge_7_adls2_properties_typeProperties_folderPath": {
+						"value": "[parameters('southridge_7_adls2_properties_typeProperties_folderPath')]"
 					}
 				}
 			},
