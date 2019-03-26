@@ -1,0 +1,29 @@
+{
+	"name": "trigger_cloudstreaming_addresses",
+	"properties": {
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "southridge-cloudsales",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"filepath": "cloudstreaming",
+					"filename": "addresses.csv",
+					"table": "[dbo].[Addresses]",
+					"database": "CloudStreaming"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2019-03-26T18:47:00.000Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
