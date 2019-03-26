@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "southridge-exportdata"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"CloudSales_connectionString": {
+			"value": ""
+		},
+		"southridge_7_adls_accountKey": {
+			"value": ""
+		},
+		"southridge_7_adls_properties_typeProperties_fileName": {
+			"value": "@dataset().filename"
+		},
+		"southridge_7_adls_properties_typeProperties_folderPath": {
+			"value": "@dataset().filepath"
+		},
+		"southridge_7_adls1_properties_typeProperties_fileName": {
+			"value": "@dataset().filename"
+		},
+		"southridge_7_adls1_properties_typeProperties_folderPath": {
+			"value": "@dataset().filepath"
+		},
+		"southridge_7_adls_properties_typeProperties_url": {
+			"value": "https://southridge7.dfs.core.windows.net"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
