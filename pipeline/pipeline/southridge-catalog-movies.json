@@ -36,7 +36,17 @@
 				"outputs": [
 					{
 						"referenceName": "Catalog_movies",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": {
+								"value": "@pipeline().parameters.filename",
+								"type": "Expression"
+							},
+							"filepath": {
+								"value": "@pipeline().parameters.filepath",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
