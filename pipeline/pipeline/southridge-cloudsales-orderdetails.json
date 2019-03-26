@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1southridge-cloudsales-orderdetails",
+	"name": "southridge-cloudsales-orderdetails",
 	"properties": {
 		"description": "southridge-cloudsales-orderdetails",
 		"activities": [
