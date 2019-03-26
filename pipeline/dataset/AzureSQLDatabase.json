@@ -1,5 +1,5 @@
 {
-	"name": "CloudSales",
+	"name": "AzureSQLDatabase",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "CloudSales",
