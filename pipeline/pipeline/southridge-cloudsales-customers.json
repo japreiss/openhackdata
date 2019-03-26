@@ -1,7 +1,7 @@
 {
-	"name": "southridge-cloudsales-addresses1",
+	"name": "southridge-cloudsales-customers",
 	"properties": {
-		"description": "southridge-cloudsales-addresses",
+		"description": "southridge-cloudsales-customers",
 		"activities": [
 			{
 				"name": "Customers",
