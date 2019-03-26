@@ -6,6 +6,14 @@
 			"referenceName": "CosmosCatalogDbConnection",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"filename": {
+				"type": "String"
+			},
+			"filepath": {
+				"type": "String"
+			}
+		},
 		"type": "DocumentDbCollection",
 		"typeProperties": {
 			"collectionName": "movies"
