@@ -2,20 +2,6 @@
 	"name": "trigger_cloudstreaming_transactions",
 	"properties": {
 		"runtimeState": "Started",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "southridge-cloudsales",
-					"type": "PipelineReference"
-				},
-				"parameters": {
-					"filepath": "cloudstreaming",
-					"filename": "transactions.csv",
-					"table": "[dbo].[Transactions]",
-					"database": "CloudStreaming"
-				}
-			}
-		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
