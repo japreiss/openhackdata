@@ -1,5 +1,5 @@
 {
-	"name": "Actors",
+	"name": "Customers",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "VanArsdelLtdOnPrem",
@@ -7,7 +7,7 @@
 		},
 		"type": "SqlServerTable",
 		"typeProperties": {
-			"tableName": "[dbo].[Actors]"
+			"tableName": "[dbo].[Customers]"
 		}
 	}
 }
