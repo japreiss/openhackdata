@@ -4,7 +4,7 @@
 		"description": "southridge-cloudsales",
 		"activities": [
 			{
-				"name": "CloudSales",
+				"name": "CopyDataFromSource",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -24,7 +24,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudSales",
+						"referenceName": "AzureSQLDatabase",
 						"type": "DatasetReference",
 						"parameters": {
 							"table": {
@@ -64,6 +64,10 @@
 			"table": {
 				"type": "String",
 				"defaultValue": "[dbo].[Addresses]"
+			},
+			"database": {
+				"type": "String",
+				"defaultValue": "CloudSales"
 			}
 		},
 		"folder": {
