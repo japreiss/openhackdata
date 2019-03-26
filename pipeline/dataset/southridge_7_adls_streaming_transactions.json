@@ -1,5 +1,5 @@
 {
-	"name": "southridge_7_adls_streaming1",
+	"name": "southridge_7_adls_streaming_transactions",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "southridge_7_adls",
