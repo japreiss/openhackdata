@@ -64,10 +64,6 @@
 			"table": {
 				"type": "String",
 				"defaultValue": "[dbo].[Addresses]"
-			},
-			"database": {
-				"type": "String",
-				"defaultValue": "CloudSales"
 			}
 		},
 		"folder": {
