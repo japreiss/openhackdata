@@ -41,6 +41,16 @@
 				]
 			}
 		],
+		"parameters": {
+			"filename": {
+				"type": "String",
+				"defaultValue": "movies.csv"
+			},
+			"filepath": {
+				"type": "String",
+				"defaultValue": "catalog"
+			}
+		},
 		"folder": {
 			"name": "Catalog"
 		}
