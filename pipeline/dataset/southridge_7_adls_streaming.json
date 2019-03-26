@@ -1,5 +1,5 @@
 {
-	"name": "southridge_7_adls3",
+	"name": "southridge_7_adls_streaming",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "southridge_7_adls",
