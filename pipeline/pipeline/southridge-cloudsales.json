@@ -24,14 +24,8 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureSQLDatabase",
-						"type": "DatasetReference",
-						"parameters": {
-							"table": {
-								"value": "@pipeline().parameters.table",
-								"type": "Expression"
-							}
-						}
+						"referenceName": "CloudSales",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
