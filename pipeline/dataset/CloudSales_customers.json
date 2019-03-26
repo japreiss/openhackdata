@@ -1,5 +1,5 @@
 {
-	"name": "CloudSales1",
+	"name": "CloudSales_customers",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "CloudSales",
