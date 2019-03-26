@@ -2,19 +2,6 @@
 	"name": "trigger_orders",
 	"properties": {
 		"runtimeState": "Started",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "southridge-cloudsales",
-					"type": "PipelineReference"
-				},
-				"parameters": {
-					"filepath": "cloudsales",
-					"filename": "orders.csv",
-					"table": "[dbo].[Orders]"
-				}
-			}
-		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
