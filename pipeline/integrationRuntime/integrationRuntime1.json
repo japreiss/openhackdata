@@ -1,0 +1,16 @@
+{
+	"name": "integrationRuntime1",
+	"properties": {
+		"type": "Managed",
+		"typeProperties": {
+			"computeProperties": {
+				"location": "AutoResolve",
+				"dataFlowRuntime": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLiveInMinutes": 60
+				}
+			}
+		}
+	}
+}
