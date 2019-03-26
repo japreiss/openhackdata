@@ -11,7 +11,7 @@
 				"parameters": {
 					"filepath": "cloudsales",
 					"filename": "orderdetails.csv",
-					"table": "[dbo].[OrderDetails]",
+					"table": "dbo.OrderDetails",
 					"database": "CloudSales"
 				}
 			}
