@@ -32,11 +32,23 @@
 		"southridge_7_dls_catalog_accountKey": {
 			"value": ""
 		},
+		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
+			"value": ""
+		},
+		"AzureDataLakeStorageFile1_properties_typeProperties_folderPath": {
+			"value": ""
+		},
 		"Catalog_movies_properties_typeProperties_fileName": {
 			"value": "@dataset().filename"
 		},
 		"Catalog_movies_properties_typeProperties_folderPath": {
 			"value": "@dataset().filepath"
+		},
+		"FourthCoffeeFileShareActors_properties_typeProperties_fileName": {
+			"value": "Actors.csv"
+		},
+		"FourthCoffeeFileShareActors_properties_typeProperties_folderPath": {
+			"value": ""
 		},
 		"southridge_7_adls_properties_typeProperties_fileName": {
 			"value": "@dataset().filename"

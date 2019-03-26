@@ -43,6 +43,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'southridge_7_dls_catalog'"
 		},
+		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": ""
+		},
+		"AzureDataLakeStorageFile1_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": ""
+		},
 		"Catalog_movies_properties_typeProperties_fileName": {
 			"type": "string",
 			"defaultValue": "@dataset().filename"
@@ -50,6 +58,14 @@
 		"Catalog_movies_properties_typeProperties_folderPath": {
 			"type": "string",
 			"defaultValue": "@dataset().filepath"
+		},
+		"FourthCoffeeFileShareActors_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "Actors.csv"
+		},
+		"FourthCoffeeFileShareActors_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": ""
 		},
 		"southridge_7_adls_properties_typeProperties_fileName": {
 			"type": "string",
@@ -80,6 +96,327 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Copy OnPremRentals Data')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy Actors",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SqlSource"
+							},
+							"sink": {
+								"type": "AzureBlobFSSink"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "Transactions",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "southridge_7_adls",
+								"type": "DatasetReference",
+								"parameters": {
+									"filename": "actors.csv",
+									"filepath": "vanarsdelltd/onpremrentals"
+								}
+							}
+						]
+					},
+					{
+						"name": "Copy Customers",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SqlSource"
+							},
+							"sink": {
+								"type": "AzureBlobFSSink"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "Transactions",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "southridge_7_adls",
+								"type": "DatasetReference",
+								"parameters": {
+									"filename": "customers.csv",
+									"filepath": "vanarsdelltd/onpremrentals"
+								}
+							}
+						]
+					},
+					{
+						"name": "Copy MovieActors",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SqlSource"
+							},
+							"sink": {
+								"type": "AzureBlobFSSink"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "Transactions",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "southridge_7_adls",
+								"type": "DatasetReference",
+								"parameters": {
+									"filename": "movieactors.csv",
+									"filepath": "vanarsdelltd/onpremrentals"
+								}
+							}
+						]
+					},
+					{
+						"name": "Copy Movies",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SqlSource"
+							},
+							"sink": {
+								"type": "AzureBlobFSSink"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "Transactions",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "southridge_7_adls",
+								"type": "DatasetReference",
+								"parameters": {
+									"filename": "movies.csv",
+									"filepath": "vanarsdelltd/onpremrentals"
+								}
+							}
+						]
+					},
+					{
+						"name": "Copy OnlineMovieMappings",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SqlSource"
+							},
+							"sink": {
+								"type": "AzureBlobFSSink"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "Transactions",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "southridge_7_adls",
+								"type": "DatasetReference",
+								"parameters": {
+									"filename": "onlinemoviemappings.csv",
+									"filepath": "vanarsdelltd/onpremrentals"
+								}
+							}
+						]
+					},
+					{
+						"name": "Copy Transactions",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SqlSource"
+							},
+							"sink": {
+								"type": "AzureBlobFSSink"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "Transactions",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "southridge_7_adls",
+								"type": "DatasetReference",
+								"parameters": {
+									"filename": "transactions.csv",
+									"filepath": "vanarsdelltd/onpremrentals"
+								}
+							}
+						]
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/Transactions')]",
+				"[concat(variables('factoryId'), '/datasets/southridge_7_adls')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/fourthcoffee-actors')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy FourthCoffee Actors",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 3,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "FileSystemSource",
+								"recursive": true
+							},
+							"sink": {
+								"type": "AzureBlobFSSink"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "FourthCoffeeFileShareActors",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "southridge_7_adls",
+								"type": "DatasetReference",
+								"parameters": {
+									"filename": {
+										"value": "@pipeline().parameters.filename",
+										"type": "Expression"
+									},
+									"filepath": {
+										"value": "@pipeline().parameters.filepath",
+										"type": "Expression"
+									}
+								}
+							}
+						]
+					}
+				],
+				"parameters": {
+					"filepath": {
+						"type": "String",
+						"defaultValue": "fourthcoffee"
+					},
+					"filename": {
+						"type": "String",
+						"defaultValue": "actors.csv"
+					}
+				},
+				"folder": {
+					"name": "FourthCoffee"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/FourthCoffeeFileShareActors')]",
+				"[concat(variables('factoryId'), '/datasets/southridge_7_adls')]"
+			]
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/southridge-catalog-movies')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -317,6 +654,35 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorageFile1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "southridge_7_adls",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureBlobFSFile",
+				"typeProperties": {
+					"format": {
+						"type": "TextFormat",
+						"columnDelimiter": ",",
+						"rowDelimiter": "",
+						"nullValue": "\\N",
+						"treatEmptyAsNull": true,
+						"skipLineCount": 0,
+						"firstRowAsHeader": false
+					},
+					"fileName": "[parameters('AzureDataLakeStorageFile1_properties_typeProperties_fileName')]",
+					"folderPath": "[parameters('AzureDataLakeStorageFile1_properties_typeProperties_folderPath')]"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/southridge_7_adls')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Catalog_movies')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -428,7 +794,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/FourthCoffeeFileShare1')]",
+			"name": "[concat(parameters('factoryName'), '/FourthCoffeeFileShareActors')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -447,11 +813,32 @@
 						"treatEmptyAsNull": true,
 						"skipLineCount": 0,
 						"firstRowAsHeader": false
-					}
+					},
+					"fileName": "[parameters('FourthCoffeeFileShareActors_properties_typeProperties_fileName')]",
+					"folderPath": "[parameters('FourthCoffeeFileShareActors_properties_typeProperties_folderPath')]"
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/linkedService1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Transactions')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "VanArsdelLtdOnPrem",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"typeProperties": {
+					"tableName": "[concat('[', 'dbo].[Transactions]')]"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/VanArsdelLtdOnPrem')]"
 			]
 		},
 		{
@@ -684,6 +1071,16 @@
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/integrationRuntime2')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime3')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {

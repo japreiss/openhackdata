@@ -43,6 +43,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'southridge_7_dls_catalog'"
 		},
+		"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": ""
+		},
+		"AzureDataLakeStorageFile1_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": ""
+		},
 		"Catalog_movies_properties_typeProperties_fileName": {
 			"type": "string",
 			"defaultValue": "@dataset().filename"
@@ -50,6 +58,14 @@
 		"Catalog_movies_properties_typeProperties_folderPath": {
 			"type": "string",
 			"defaultValue": "@dataset().filepath"
+		},
+		"FourthCoffeeFileShareActors_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "Actors.csv"
+		},
+		"FourthCoffeeFileShareActors_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": ""
 		},
 		"southridge_7_adls_properties_typeProperties_fileName": {
 			"type": "string",
@@ -138,6 +154,12 @@
 					"southridge_7_dls_catalog_properties_typeProperties_url": {
 						"value": "[parameters('southridge_7_dls_catalog_properties_typeProperties_url')]"
 					},
+					"AzureDataLakeStorageFile1_properties_typeProperties_fileName": {
+						"value": "[parameters('AzureDataLakeStorageFile1_properties_typeProperties_fileName')]"
+					},
+					"AzureDataLakeStorageFile1_properties_typeProperties_folderPath": {
+						"value": "[parameters('AzureDataLakeStorageFile1_properties_typeProperties_folderPath')]"
+					},
 					"Catalog_movies_properties_typeProperties_fileName": {
 						"value": "[parameters('Catalog_movies_properties_typeProperties_fileName')]"
 					},
@@ -170,6 +192,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"FourthCoffeeFileShareActors_properties_typeProperties_fileName": {
+						"value": "[parameters('FourthCoffeeFileShareActors_properties_typeProperties_fileName')]"
+					},
+					"FourthCoffeeFileShareActors_properties_typeProperties_folderPath": {
+						"value": "[parameters('FourthCoffeeFileShareActors_properties_typeProperties_folderPath')]"
 					}
 				}
 			},
