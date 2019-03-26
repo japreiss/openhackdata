@@ -1,5 +1,5 @@
 {
-	"name": "Movies",
+	"name": "OnlineMovieMappings",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "VanArsdelLtdOnPrem",
@@ -7,7 +7,7 @@
 		},
 		"type": "SqlServerTable",
 		"typeProperties": {
-			"tableName": "[dbo].[Movies]"
+			"tableName": "[dbo].[OnlineMovieMappings]"
 		}
 	}
 }
