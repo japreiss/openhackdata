@@ -1,0 +1,14 @@
+{
+	"name": "southridge_catalog_movies",
+	"properties": {
+		"description": "southridge_catalog_movies",
+		"linkedServiceName": {
+			"referenceName": "CosmosCatalogDbConnection",
+			"type": "LinkedServiceReference"
+		},
+		"type": "DocumentDbCollection",
+		"typeProperties": {
+			"collectionName": "movies"
+		}
+	}
+}
