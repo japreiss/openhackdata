@@ -24,13 +24,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudSales1",
+						"referenceName": "CloudStreaming",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "southridge_7_adls3",
+						"referenceName": "southridge_7_adls_streaming",
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": {
