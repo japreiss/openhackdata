@@ -24,7 +24,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudSales_customers",
+						"referenceName": "CloudSales_orderdetails",
 						"type": "DatasetReference"
 					}
 				],

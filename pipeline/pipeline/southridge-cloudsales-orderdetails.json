@@ -4,7 +4,7 @@
 		"description": "southridge-cloudsales-orderdetails",
 		"activities": [
 			{
-				"name": "Customers",
+				"name": "OrderDetails",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -24,7 +24,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudSales_customers",
+						"referenceName": "CloudSales_orderdetails",
 						"type": "DatasetReference"
 					}
 				],
