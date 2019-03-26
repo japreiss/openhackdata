@@ -25,7 +25,13 @@
 				"inputs": [
 					{
 						"referenceName": "CloudStreaming",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"table": {
+								"value": "@pipeline().parameters.table",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
