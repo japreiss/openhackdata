@@ -1,0 +1,28 @@
+{
+	"name": "trigger_customers",
+	"properties": {
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "southridge-cloudsales",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"filepath": "cloudsales",
+					"filename": "customers.csv",
+					"table": "[dbo].[Customers]"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2019-03-26T19:33:00.000Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
