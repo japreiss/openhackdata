@@ -54,6 +54,10 @@
 			"filename": {
 				"type": "String",
 				"defaultValue": "customers.csv"
+			},
+			"table": {
+				"type": "String",
+				"defaultValue": "[dbo].[Customers]"
 			}
 		},
 		"folder": {
