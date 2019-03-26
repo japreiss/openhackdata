@@ -1,0 +1,28 @@
+{
+	"name": "trigger_cloudsales_addresses",
+	"properties": {
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "southridge-cloudsales",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"filepath": "cloudsales",
+					"filename": "addresses",
+					"table": "[dbo].[Addresses]"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2019-03-26T18:36:00.000Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
