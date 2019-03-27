@@ -110,7 +110,7 @@ vanCustomer = (vanCust.selectExpr(
 )).withColumn("AddressID", uuidUdf()
 ).select("*",fns.concat("SourceID", "CustomerID", "AddressID").alias("UniqueID"))
 
-vanCustomer.write.csv("/mnt/southridge/vanarsdelltd/output/address.csv")
+vanCustomer.write.mode("overwrite").csv("/mnt/southridge/vanarsdelltd/output/address.csv")
                
 #vanCustomer.show(2, False)
 
