@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy FourthCoffee Actors",
+				"name": "Copy FourthCoffee Movie Actors",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
