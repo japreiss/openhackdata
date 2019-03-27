@@ -23,7 +23,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Transactions",
+						"referenceName": "Actors",
 						"type": "DatasetReference"
 					}
 				],
@@ -59,7 +59,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Transactions",
+						"referenceName": "Customer",
 						"type": "DatasetReference"
 					}
 				],
