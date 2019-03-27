@@ -95,7 +95,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Transactions",
+						"referenceName": "MovieActors",
 						"type": "DatasetReference"
 					}
 				],
@@ -105,7 +105,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "movieactors.csv",
-							"filepath": "vanarsdelltd/onpremrentals"
+							"filepath": "southridge/vanarsdelltd/onpremrentals"
 						}
 					}
 				]
