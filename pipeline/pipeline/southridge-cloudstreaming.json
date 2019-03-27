@@ -112,20 +112,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"filepath": {
-				"type": "String",
-				"defaultValue": "cloudstreaming"
-			},
-			"filename": {
-				"type": "String",
-				"defaultValue": "customers.csv"
-			},
-			"table": {
-				"type": "String",
-				"defaultValue": "[dbo].[Customers]"
-			}
-		},
 		"folder": {
 			"name": "CloudStreaming"
 		}
