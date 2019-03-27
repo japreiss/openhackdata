@@ -160,7 +160,7 @@ fourTrans = (fourTransactions.select(
   fns.concat("SourceID", "MovieID").alias("SourceMovieID"))
 
 #fourTrans.show(5, False)
-fourTrans.write.csv("/mnt/southridge/vanarsdelltd/output/rentals.csv")
+fourTrans.write.mode("overwrite").csv("/mnt/southridge/vanarsdelltd/output/rentals.csv")
 
 # COMMAND ----------
 
