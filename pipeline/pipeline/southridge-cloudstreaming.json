@@ -40,7 +40,7 @@
 				]
 			},
 			{
-				"name": "Copy Data1",
+				"name": "Copy Customer",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -60,7 +60,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudStreamingAddress",
+						"referenceName": "CloudStreamingCustomer",
 						"type": "DatasetReference"
 					}
 				],
@@ -69,7 +69,7 @@
 						"referenceName": "southridge_7_adls",
 						"type": "DatasetReference",
 						"parameters": {
-							"filename": "address.csv",
+							"filename": "customer.csv",
 							"filepath": "southridge/cloudstreaming"
 						}
 					}
