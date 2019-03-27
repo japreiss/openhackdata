@@ -24,7 +24,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudOrderDetails",
+						"referenceName": "CloudSalesAddress",
 						"type": "DatasetReference"
 					}
 				],
@@ -60,7 +60,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudOrderDetails",
+						"referenceName": "CloudSalesCustomer",
 						"type": "DatasetReference"
 					}
 				],
@@ -96,7 +96,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudOrderDetails",
+						"referenceName": "CloudSalesOrders",
 						"type": "DatasetReference"
 					}
 				],
@@ -132,7 +132,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudOrderDetails",
+						"referenceName": "CloudSalesOrderDetails",
 						"type": "DatasetReference"
 					}
 				],
