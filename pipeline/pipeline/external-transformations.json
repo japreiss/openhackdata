@@ -3,14 +3,39 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "FourthCoffeeTransform",
-				"type": "DatabricksSparkPython",
+				"name": "transform-vanarsdel",
+				"type": "DatabricksNotebook",
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false
+				},
+				"typeProperties": {
+					"notebookPath": "/Shared/vanarsdel-xform-2"
+				},
+				"linkedServiceName": {
+					"referenceName": "TransformDataFromExternal",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "transform-coffee",
+				"type": "DatabricksNotebook",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"notebookPath": "/Shared/fourthcoffee-xform"
+				},
+				"linkedServiceName": {
+					"referenceName": "TransformDataFromExternal",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
