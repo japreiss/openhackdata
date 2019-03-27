@@ -106,7 +106,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "transactions.csv",
-							"filepath": "southridge/cloudstreaming"
+							"filepath": "southridge/southridge/cloudstreaming"
 						}
 					}
 				]
