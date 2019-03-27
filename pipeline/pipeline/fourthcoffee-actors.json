@@ -49,7 +49,7 @@
 		"parameters": {
 			"filepath": {
 				"type": "String",
-				"defaultValue": "fourthcoffee/rentals"
+				"defaultValue": "southridge/fourthcoffee/rentals"
 			},
 			"filename": {
 				"type": "String",
