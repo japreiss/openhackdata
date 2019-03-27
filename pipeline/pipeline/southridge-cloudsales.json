@@ -34,7 +34,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "address.csv",
-							"filepath": "southridge/cloudsales"
+							"filepath": "southridge/southridge/cloudsales"
 						}
 					}
 				]
