@@ -129,7 +129,7 @@ vanCustomer = (vanCust.selectExpr(
 )
 ).select("*",fns.concat("SourceID", "CustomerID").alias("UniqueID"))
 
-vanCustomer.write.csv("/mnt/southridge/vanarsdelltd/output/customer.csv")
+vanCustomer.write.mode("overwrite").csv("/mnt/southridge/vanarsdelltd/output/customer.csv")
                
 #vanCustomer.show(2, False)
 
