@@ -162,3 +162,7 @@ fourTrans.write.csv("/mnt/southridge/vanarsdelltd/output/rentals.csv")
 
 # COMMAND ----------
 
+dbutils.fs.unmount("/mnt/southridge")
+
+# COMMAND ----------
+
