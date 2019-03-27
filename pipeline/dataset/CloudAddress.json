@@ -7,7 +7,7 @@
 		},
 		"type": "AzureSqlTable",
 		"typeProperties": {
-			"tableName": "[dbo].[Customers]"
+			"tableName": "[dbo].[Orders]"
 		}
 	}
 }
