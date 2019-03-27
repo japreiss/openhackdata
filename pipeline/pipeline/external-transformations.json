@@ -23,6 +23,14 @@
 			{
 				"name": "transform-coffee",
 				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "transform-vanarsdel",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
