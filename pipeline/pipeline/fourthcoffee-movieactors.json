@@ -24,7 +24,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "FourthCoffeeFileShareActors",
+						"referenceName": "FourthCoffeeFileShareMovieActors",
 						"type": "DatasetReference"
 					}
 				],
