@@ -5,17 +5,9 @@
 			"referenceName": "CloudStreaming",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"table": {
-				"type": "String"
-			}
-		},
 		"type": "AzureSqlTable",
 		"typeProperties": {
-			"tableName": {
-				"value": "@dataset().table",
-				"type": "Expression"
-			}
+			"tableName": "[dbo].[Addresses]"
 		}
 	}
 }
