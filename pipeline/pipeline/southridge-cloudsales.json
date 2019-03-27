@@ -142,7 +142,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "ordersdetails.csv",
-							"filepath": "southridge/cloudsales"
+							"filepath": "southridge/southridge/cloudsales"
 						}
 					}
 				]
