@@ -6,10 +6,13 @@ configs = {"fs.azure.account.auth.type": "OAuth",
        "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/2eb86c1f-71e5-4dd8-850a-33058adc0996/oauth2/token",
        "fs.azure.createRemoteFileSystemDuringInitialization": "true"}
 
-dbutils.fs.mount(
-source = "abfss://southridge@southridgeteam7v2.dfs.core.windows.net/",
-mount_point = "/mnt/southridge",
-extra_configs = configs)
+try: 
+  dbutils.fs.mount(
+  source = "abfss://southridge@southridgeteam7v2.dfs.core.windows.net/",
+  mount_point = "/mnt/southridge",
+  extra_configs = configs)
+except: 
+  pass
 
 # COMMAND ----------
 
@@ -136,6 +139,10 @@ fns.concat("SourceID", "MovieID").alias("SourceMovieID"))
 
 
 fourTrans.write.mode("overwrite").csv("/mnt/southridge/fourthcoffee/output/rentals.csv")
+
+# COMMAND ----------
+
+dbutils.fs.unmount("/mnt/southridge")
 
 # COMMAND ----------
 
