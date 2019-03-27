@@ -23,7 +23,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Transactions",
+						"referenceName": "Actors",
 						"type": "DatasetReference"
 					}
 				],
@@ -33,7 +33,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "actors.csv",
-							"filepath": "vanarsdelltd/onpremrentals"
+							"filepath": "southridge/vanarsdelltd/onpremrentals"
 						}
 					}
 				]
@@ -59,7 +59,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Transactions",
+						"referenceName": "Customer",
 						"type": "DatasetReference"
 					}
 				],
@@ -69,7 +69,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "customers.csv",
-							"filepath": "vanarsdelltd/onpremrentals"
+							"filepath": "southridge/vanarsdelltd/onpremrentals"
 						}
 					}
 				]
@@ -95,7 +95,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Transactions",
+						"referenceName": "MovieActors",
 						"type": "DatasetReference"
 					}
 				],
@@ -105,7 +105,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "movieactors.csv",
-							"filepath": "vanarsdelltd/onpremrentals"
+							"filepath": "southridge/vanarsdelltd/onpremrentals"
 						}
 					}
 				]
@@ -131,7 +131,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Transactions",
+						"referenceName": "Movies",
 						"type": "DatasetReference"
 					}
 				],
@@ -141,7 +141,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "movies.csv",
-							"filepath": "vanarsdelltd/onpremrentals"
+							"filepath": "southridge/vanarsdelltd/onpremrentals"
 						}
 					}
 				]
@@ -167,7 +167,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Transactions",
+						"referenceName": "OnlineMovieMappings",
 						"type": "DatasetReference"
 					}
 				],
@@ -177,7 +177,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "onlinemoviemappings.csv",
-							"filepath": "vanarsdelltd/onpremrentals"
+							"filepath": "southridge/vanarsdelltd/onpremrentals"
 						}
 					}
 				]
@@ -213,7 +213,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "transactions.csv",
-							"filepath": "vanarsdelltd/onpremrentals"
+							"filepath": "southridge/vanarsdelltd/onpremrentals"
 						}
 					}
 				]

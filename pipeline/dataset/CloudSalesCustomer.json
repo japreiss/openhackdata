@@ -1,5 +1,5 @@
 {
-	"name": "CloudSales",
+	"name": "CloudSalesCustomer",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "CloudSales",
@@ -7,7 +7,7 @@
 		},
 		"type": "AzureSqlTable",
 		"typeProperties": {
-			"tableName": "[dbo].[Addresses]"
+			"tableName": "[dbo].[Customers]"
 		}
 	}
 }
