@@ -4,7 +4,7 @@
 		"description": "southridge-cloudstreaming",
 		"activities": [
 			{
-				"name": "CloudStreaming",
+				"name": "CloudStreamingAddress",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -24,14 +24,8 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CloudStreaming",
-						"type": "DatasetReference",
-						"parameters": {
-							"table": {
-								"value": "@pipeline().parameters.table",
-								"type": "Expression"
-							}
-						}
+						"referenceName": "CloudStreamingAddress",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
@@ -39,14 +33,8 @@
 						"referenceName": "southridge_7_adls",
 						"type": "DatasetReference",
 						"parameters": {
-							"filename": {
-								"value": "@pipeline().parameters.filename",
-								"type": "Expression"
-							},
-							"filepath": {
-								"value": "@pipeline().parameters.filepath",
-								"type": "Expression"
-							}
+							"filename": "address.csv",
+							"filepath": "southridge/cloudstreaming"
 						}
 					}
 				]
