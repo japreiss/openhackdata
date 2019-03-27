@@ -1,5 +1,5 @@
 {
-	"name": "CloudStreaming",
+	"name": "CloudStreamingAddress",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "CloudStreaming",
