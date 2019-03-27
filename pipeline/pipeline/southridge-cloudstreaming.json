@@ -70,7 +70,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "customer.csv",
-							"filepath": "southridge/cloudstreaming"
+							"filepath": "southridge/southridge/cloudstreaming"
 						}
 					}
 				]
