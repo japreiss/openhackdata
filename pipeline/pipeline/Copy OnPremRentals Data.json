@@ -69,7 +69,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "customers.csv",
-							"filepath": "vanarsdelltd/onpremrentals"
+							"filepath": "southridge/vanarsdelltd/onpremrentals"
 						}
 					}
 				]
