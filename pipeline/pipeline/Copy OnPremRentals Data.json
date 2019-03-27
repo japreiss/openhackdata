@@ -33,7 +33,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "actors.csv",
-							"filepath": "vanarsdelltd/onpremrentals"
+							"filepath": "southridge/vanarsdelltd/onpremrentals"
 						}
 					}
 				]
