@@ -1,0 +1,13 @@
+{
+	"name": "CloudSalesOrders",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CloudSales",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": "[dbo].[Orders]"
+		}
+	}
+}
