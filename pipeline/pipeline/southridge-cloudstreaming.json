@@ -74,6 +74,42 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "Copy Transactions",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"sink": {
+						"type": "AzureBlobFSSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "CloudStreamingTransactions",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "southridge_7_adls",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "transactions.csv",
+							"filepath": "southridge/cloudstreaming"
+						}
+					}
+				]
 			}
 		],
 		"parameters": {
