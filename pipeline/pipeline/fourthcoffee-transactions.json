@@ -5,14 +5,6 @@
 			{
 				"name": "Copy FourthCoffee Transactions",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Copy Daily Transactions",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 3,
@@ -52,51 +44,6 @@
 						}
 					}
 				]
-			},
-			{
-				"name": "Copy Daily Transactions",
-				"type": "Copy",
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"typeProperties": {
-					"source": {
-						"type": "FileSystemSource",
-						"recursive": true
-					},
-					"sink": {
-						"type": "FileSystemSink"
-					},
-					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "FourthCoffeeDailyTransactions",
-						"type": "DatasetReference",
-						"parameters": {
-							"updatedDate": {
-								"value": "@pipeline().parameters.updatedDate",
-								"type": "Expression"
-							}
-						}
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "FourthCoffeeFileShareTransactions",
-						"type": "DatasetReference",
-						"parameters": {
-							"updaredDate": {
-								"value": "@pipeline().parameters.updatedDate",
-								"type": "Expression"
-							}
-						}
-					}
-				]
 			}
 		],
 		"parameters": {
@@ -109,8 +56,7 @@
 				"defaultValue": "transactions.csv"
 			},
 			"updatedDate": {
-				"type": "String",
-				"defaultValue": "2017-01-01"
+				"type": "String"
 			}
 		},
 		"folder": {
