@@ -42,7 +42,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "address.csv",
-							"filepath": "southridge/southridge/cloudstreaming"
+							"filepath": {
+								"value": "@variables('cloudstreamingFolder')",
+								"type": "Expression"
+							}
 						}
 					}
 				]
@@ -86,7 +89,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "customer.csv",
-							"filepath": "southridge/southridge/cloudstreaming"
+							"filepath": {
+								"value": "@variables('cloudstreamingFolder')",
+								"type": "Expression"
+							}
 						}
 					}
 				]
@@ -130,7 +136,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "transactions.csv",
-							"filepath": "southridge/southridge/cloudstreaming"
+							"filepath": {
+								"value": "@variables('cloudstreamingFolder')",
+								"type": "Expression"
+							}
 						}
 					}
 				]
