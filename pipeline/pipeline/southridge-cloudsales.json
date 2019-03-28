@@ -245,7 +245,7 @@
 		"parameters": {
 			"executionDate": {
 				"type": "String",
-				"defaultValue": "2017-12-31"
+				"defaultValue": "2018-01-01"
 			}
 		},
 		"variables": {
