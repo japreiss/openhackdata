@@ -6,6 +6,14 @@
 			{
 				"name": "Copy Address",
 				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Set Variable CloudSalesFolder",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 3,
@@ -34,7 +42,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "address.csv",
-							"filepath": "southridge/southridge/cloudsales"
+							"filepath": {
+								"value": "\"southridge/southridge/cloudsales\" & substring(pipeline().parameters.executionDate, 0, 4) & substring(pipeline().parameters.executionDate, 5, 2) & substring(pipeline().parameters.executionDate, 8, 2)",
+								"type": "Expression"
+							}
 						}
 					}
 				]
@@ -42,6 +53,14 @@
 			{
 				"name": "Copy Customers",
 				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy Address",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 3,
@@ -78,6 +97,14 @@
 			{
 				"name": "Copy Orders",
 				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy Customers",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 3,
@@ -114,6 +141,14 @@
 			{
 				"name": "Copy Order Details",
 				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy Orders",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 3,
@@ -146,8 +181,67 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "Execute dbo MoveData",
+				"type": "SqlServerStoredProcedure",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[MoveData]",
+					"storedProcedureParameters": {
+						"DateToMove": {
+							"value": {
+								"value": "@pipeline().parameters.executionDate",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"SwitchIn": {
+							"value": "1",
+							"type": "Boolean"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "CloudSales",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Set Variable CloudSalesFolder",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Execute dbo MoveData",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"typeProperties": {
+					"variableName": "cloudsalesFolder",
+					"value": "\"southridge/southridge/cloudsales\" & substring(pipeline().parameters.executionDate, 0, 4) & substring(pipeline().parameters.executionDate, 5, 2) & substring(pipeline().parameters.executionDate, 8, 2) & \"/\""
+				}
 			}
 		],
+		"parameters": {
+			"executionDate": {
+				"type": "String",
+				"defaultValue": "2017-01-01"
+			}
+		},
+		"variables": {
+			"cloudsalesFolder": {
+				"type": "String",
+				"defaultValue": "cloudsales"
+			}
+		},
 		"folder": {
 			"name": "CloudSales"
 		}
