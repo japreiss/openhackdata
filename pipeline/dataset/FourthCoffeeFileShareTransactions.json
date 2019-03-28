@@ -2,7 +2,7 @@
 	"name": "FourthCoffeeFileShareTransactions",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "linkedService1",
+			"referenceName": "linkedService2",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -22,7 +22,10 @@
 				"skipLineCount": 0,
 				"firstRowAsHeader": false
 			},
-			"fileName": "Transactions.csv"
+			"fileName": {
+				"value": "@concat(dataset().updaredDate, '.csv')",
+				"type": "Expression"
+			}
 		}
 	}
 }
