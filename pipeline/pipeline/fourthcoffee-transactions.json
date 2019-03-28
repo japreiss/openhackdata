@@ -27,7 +27,10 @@
 						"referenceName": "FourthCoffeeFileShareTransactions",
 						"type": "DatasetReference",
 						"parameters": {
-							"updaredDate": "2017-01-01"
+							"updaredDate": {
+								"value": "@pipeline().parameters.updatedDate",
+								"type": "Expression"
+							}
 						}
 					}
 				],
