@@ -6,9 +6,8 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"updaredDate": {
-				"type": "String",
-				"defaultValue": "2017-01-01"
+			"updatedDate": {
+				"type": "String"
 			}
 		},
 		"type": "FileShare",
