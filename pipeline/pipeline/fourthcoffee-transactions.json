@@ -25,7 +25,10 @@
 				"inputs": [
 					{
 						"referenceName": "FourthCoffeeFileShareTransactions",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"updaredDate": "2017-01-01"
+						}
 					}
 				],
 				"outputs": [
