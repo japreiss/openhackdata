@@ -197,7 +197,7 @@
 				"typeProperties": {
 					"variableName": "cloudsalesFolder",
 					"value": {
-						"value": "concat('southridge/southridge/cloudsales', substring(pipeline().parameters.executionDate, 0, 4) , substring(pipeline().parameters.executionDate, 5, 2),  substring(pipeline().parameters.executionDate, 8, 2))",
+						"value": "@concat('//southridge/southridge/cloudsales/', substring(pipeline().parameters.executionDate, 0, 4) , '/' , substring(pipeline().parameters.executionDate, 5, 2),   '/' , substring(pipeline().parameters.executionDate, 8, 2), '/' )",
 						"type": "Expression"
 					}
 				}
