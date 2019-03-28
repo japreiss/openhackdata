@@ -22,11 +22,7 @@
 				"skipLineCount": 0,
 				"firstRowAsHeader": false
 			},
-			"fileName": "Transactions.csv",
-			"folderPath": {
-				"value": "@dataset().updaredDate",
-				"type": "Expression"
-			}
+			"fileName": "Transactions.csv"
 		}
 	}
 }
