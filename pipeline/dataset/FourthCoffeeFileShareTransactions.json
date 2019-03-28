@@ -22,7 +22,7 @@
 				"firstRowAsHeader": false
 			},
 			"fileName": {
-				"value": "@concat(dataset().updaredDate, '.csv')",
+				"value": "@concat(dataset().updatedDate, '.csv')",
 				"type": "Expression"
 			}
 		}
