@@ -43,7 +43,7 @@
 						"parameters": {
 							"filename": "address.csv",
 							"filepath": {
-								"value": "\"southridge/southridge/cloudsales\" & substring(pipeline().parameters.executionDate, 0, 4) & substring(pipeline().parameters.executionDate, 5, 2) & substring(pipeline().parameters.executionDate, 8, 2)",
+								"value": "@variables('cloudsalesFolder')",
 								"type": "Expression"
 							}
 						}
@@ -89,7 +89,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "customers.csv",
-							"filepath": "southridge/southridge/cloudsales"
+							"filepath": {
+								"value": "@variables('cloudsalesFolder')",
+								"type": "Expression"
+							}
 						}
 					}
 				]
@@ -133,7 +136,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "orders.csv",
-							"filepath": "southridge/southridge/cloudsales"
+							"filepath": {
+								"value": "@variables('cloudsalesFolder')",
+								"type": "Expression"
+							}
 						}
 					}
 				]
@@ -177,7 +183,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": "ordersdetails.csv",
-							"filepath": "southridge/southridge/cloudsales"
+							"filepath": {
+								"value": "@variables('cloudsalesFolder')",
+								"type": "Expression"
+							}
 						}
 					}
 				]
