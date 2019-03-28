@@ -44,7 +44,7 @@
 								"type": "Expression"
 							},
 							"filepath": {
-								"value": "@concat(pipeline().parameters.filepath,'/',pipeline().parameters.updatedDate)",
+								"value": "@concat(pipeline().parameters.filepath,'/',substring(pipeline().parameters.updatedDate,0,4),'/',substring(pipeline().parameters.updatedDate,5,2),'/',substring(pipeline().parameters.updatedDate,8,2))",
 								"type": "Expression"
 							}
 						}
