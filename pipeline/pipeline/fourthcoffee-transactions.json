@@ -27,7 +27,7 @@
 						"referenceName": "FourthCoffeeFileShareTransactions",
 						"type": "DatasetReference",
 						"parameters": {
-							"updaredDate": {
+							"updatedDate": {
 								"value": "@pipeline().parameters.updatedDate",
 								"type": "Expression"
 							}
