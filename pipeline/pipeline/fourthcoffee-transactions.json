@@ -88,7 +88,13 @@
 				"outputs": [
 					{
 						"referenceName": "FourthCoffeeFileShareTransactions",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"updaredDate": {
+								"value": "@pipeline().parameters.updatedDate",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
