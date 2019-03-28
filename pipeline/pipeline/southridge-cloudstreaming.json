@@ -8,7 +8,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Set Variable1",
+						"activity": "Set cloudstreamingFolder",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -136,26 +136,26 @@
 				]
 			},
 			{
-				"name": "Set Variable1",
+				"name": "Set cloudstreamingFolder",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "Stored Procedure1",
+						"activity": "Move Data",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					}
 				],
 				"typeProperties": {
-					"variableName": "cloudsalesFolder",
+					"variableName": "cloudstreamingFolder",
 					"value": {
-						"value": "@concat('//southridge/southridge/cloudsales/', substring(pipeline().parameters.executionDate, 0, 4) , '/' , substring(pipeline().parameters.executionDate, 5, 2),   '/' , substring(pipeline().parameters.executionDate, 8, 2), '/' )",
+						"value": "@concat('//southridge/southridge/cloudstreaming/', substring(pipeline().parameters.executionDate, 0, 4) , '/' , substring(pipeline().parameters.executionDate, 5, 2),   '/' , substring(pipeline().parameters.executionDate, 8, 2), '/' )",
 						"type": "Expression"
 					}
 				}
 			},
 			{
-				"name": "Stored Procedure1",
+				"name": "Move Data",
 				"type": "SqlServerStoredProcedure",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -165,7 +165,7 @@
 					"secureInput": false
 				},
 				"typeProperties": {
-					"storedProcedureName": "dbo.MoveData",
+					"storedProcedureName": "[dbo].[MoveData]",
 					"storedProcedureParameters": {
 						"DateToMove": {
 							"value": {
@@ -181,11 +181,22 @@
 					}
 				},
 				"linkedServiceName": {
-					"referenceName": "CloudSales",
+					"referenceName": "CloudStreaming",
 					"type": "LinkedServiceReference"
 				}
 			}
 		],
+		"parameters": {
+			"executionDate": {
+				"type": "String",
+				"defaultValue": "2018-01-01"
+			}
+		},
+		"variables": {
+			"cloudstreamingFolder": {
+				"type": "String"
+			}
+		},
 		"folder": {
 			"name": "CloudStreaming"
 		}
