@@ -11,9 +11,6 @@
 			},
 			"filepath": {
 				"type": "String"
-			},
-			"updatedDate": {
-				"type": "String"
 			}
 		},
 		"type": "AzureBlobFSFile",
@@ -32,7 +29,7 @@
 				"type": "Expression"
 			},
 			"folderPath": {
-				"value": "@concat(dataset().filepath, '/', dataset().updatedDate)",
+				"value": "@dataset().filepath",
 				"type": "Expression"
 			}
 		}
