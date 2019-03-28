@@ -24,9 +24,12 @@ from pyspark.sql.types import StringType
 
 uuidUdf = fns.udf(lambda : str(uuid.uuid1()), StringType())
 
+#executionDate = "2017/12/31"
+executionDate = getArgument("executionDate", "2018-01-01")  
+
 # COMMAND ----------
 
-fourthMovies = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/southridge/fourthcoffee/rentals/movies.csv")
+fourthMovies = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/southridge/fourthcoffee/rentals/"+executionDate+"/movies.csv")
 
 fourthMovies.printSchema()
 
@@ -36,13 +39,13 @@ fourthMovies.show(2,False)
 
 # COMMAND ----------
 
-fourthMovieActors = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/southridge/fourthcoffee/rentals/movieactors.csv")
+fourthMovieActors = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/southridge/fourthcoffee/rentals/"+executionDate+"/movieactors.csv")
 
 fourthMovieActors.printSchema()
 
 # COMMAND ----------
 
-fourthActors = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/southridge/fourthcoffee/rentals/actors.csv")
+fourthActors = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/southridge/fourthcoffee/rentals/"+executionDate+"/actors.csv")
 
 fourthActors.printSchema()
 
@@ -67,13 +70,13 @@ fourthTrans = (fourthTrans
                  "CatalogID", uuidUdf()
                ))
 
-fourthTrans.write.mode("overwrite").csv("/mnt/southridge/fourthcoffee/output/catalog.csv")
+fourthTrans.write.mode("overwrite").csv("/mnt/southridge/fourthcoffee/output/"+executionDate+"/catalog.csv")
 
 
 
 # COMMAND ----------
 
-fourthCustomer = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/southridge/fourthcoffee/rentals/customers.csv")
+fourthCustomer = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/southridge/fourthcoffee/rentals/"+executionDate+"/customers.csv")
 
 fourthCustomer.printSchema()
 
@@ -95,7 +98,7 @@ fourthCust = (fourthCustomer.select(
   "*",fns.concat("SourceID", "CustomerID", "AddressID").alias("UniqueID")
 ))
 
-fourthCust.write.mode("overwrite").csv("/mnt/southridge/fourthcoffee/output/address.csv")
+fourthCust.write.mode("overwrite").csv("/mnt/southridge/fourthcoffee/output/"+executionDate+"/address.csv")
 
 # COMMAND ----------
 
@@ -109,11 +112,11 @@ fourthCust = (fourthCustomer.select(
   "UpdatedDate"
 )).select("*",fns.concat("SourceID", "CustomerID").alias("UniqueID"))
 
-fourthCust.write.mode("overwrite").csv("/mnt/southridge/fourthcoffee/output/customer.csv")
+fourthCust.write.mode("overwrite").csv("/mnt/southridge/fourthcoffee/output/"+executionDate+"/customer.csv")
 
 # COMMAND ----------
 
-fourTransactions = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/southridge/fourthcoffee/rentals/transactions.csv")
+fourTransactions = spark.read.format('csv').options(header='true', inferschema='true').load("/mnt/southridge/fourthcoffee/rentals/" + executionsDate +  "/transactions.csv")
 
 fourTransactions.show(2,False)
 
@@ -138,7 +141,7 @@ fourTrans = (fourTransactions.select(
 fns.concat("SourceID", "MovieID").alias("SourceMovieID"))
 
 
-fourTrans.write.mode("overwrite").csv("/mnt/southridge/fourthcoffee/output/rentals.csv")
+fourTrans.write.mode("overwrite").csv("/mnt/southridge/fourthcoffee/output/"+executionDate+"/rentals.csv")
 
 # COMMAND ----------
 
