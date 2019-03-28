@@ -2,17 +2,6 @@
 	"name": "trigger 4",
 	"properties": {
 		"runtimeState": "Started",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "southridge-cloudsales",
-					"type": "PipelineReference"
-				},
-				"parameters": {
-					"executionDate": "2018-01-04"
-				}
-			}
-		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
