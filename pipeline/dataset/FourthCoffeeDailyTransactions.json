@@ -1,0 +1,32 @@
+{
+	"name": "FourthCoffeeDailyTransactions",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkedService2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"updatedDate": {
+				"type": "String",
+				"defaultValue": "2017-01-01"
+			}
+		},
+		"type": "FileShare",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "\\N",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": false
+			},
+			"fileName": {
+				"value": "@concat(dataset().updatedDate,'.csv')",
+				"type": "Expression"
+			},
+			"folderPath": ""
+		}
+	}
+}
