@@ -5,6 +5,12 @@
 			"referenceName": "linkedService1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"updaredDate": {
+				"type": "String",
+				"defaultValue": "2017-01-01"
+			}
+		},
 		"type": "FileShare",
 		"typeProperties": {
 			"format": {
@@ -17,7 +23,10 @@
 				"firstRowAsHeader": false
 			},
 			"fileName": "Transactions.csv",
-			"folderPath": ""
+			"folderPath": {
+				"value": "@dataset().updaredDate",
+				"type": "Expression"
+			}
 		}
 	}
 }
